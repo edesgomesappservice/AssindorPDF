@@ -1,0 +1,3684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GravarDocumentosDigitalizadosComObs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderIdPai" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomePasta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documentos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tamanhos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Classificacao" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Criptografada" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTotalPaginas" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataVencimento" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAvisoVencimento" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="QtdeDiasAvisoVencimento" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observacoes" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDateTime">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dateTime" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GravarDocumentosDigitalizadosComObsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GravarDocumentosDigitalizados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataCapturaFolder" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderIdPai" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomePasta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documentos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tamanhos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Classificacao" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Criptografada" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTotalPaginas" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataVencimento" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAvisoVencimento" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="QtdeDiasAvisoVencimento" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observacoes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="flpChaveTransferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashComputer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarDocumentosDigitalizadosResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GravarDocumentosDigitalizadosComEvento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataCapturaFolder" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderIdPai" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomePasta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documentos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tamanhos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Classificacao" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Criptografada" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTotalPaginas" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataVencimento" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAvisoVencimento" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="QtdeDiasAvisoVencimento" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observacoes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="flpChaveTransferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashComputer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Evento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarDocumentosDigitalizadosComEventoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GravarDocumentosDigitalizadosComHTTP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataCapturaFolder" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderIdPai" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomePasta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documentos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tamanhos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Classificacao" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Criptografada" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTotalPaginas" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataVencimento" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAvisoVencimento" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="QtdeDiasAvisoVencimento" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observacoes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="flpChaveTransferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashComputer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Evento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarDocumentosDigitalizadosComHTTPResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GravarFolderCloudDocs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataCapturaFolder" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderIdPai" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice06" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documentos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tamanhos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Classificacao" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Criptografada" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTotalPaginas" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataVencimento" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAvisoVencimento" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="QtdeDiasAvisoVencimento" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observacoes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="flpChaveTransferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashComputer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Evento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderCloudDocsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GravarFolderCloudDocsComComplemento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataCapturaFolder" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderIdPai" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice06" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documentos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tamanhos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Classificacao" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Complemento" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTotalPaginas" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataVencimento" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAvisoVencimento" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="QtdeDiasAvisoVencimento" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observacoes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="flpChaveTransferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashComputer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Evento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderCloudDocsComComplementoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GravarFolderCloudDocsIndice10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataCapturaFolder" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderIdPai" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice06" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documentos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tamanhos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Classificacao" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Complemento" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTotalPaginas" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataVencimento" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAvisoVencimento" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="QtdeDiasAvisoVencimento" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observacoes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="flpChaveTransferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashComputer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Evento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice07" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice08" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice09" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice10" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderCloudDocsIndice10Response">
+        <s:complexType />
+      </s:element>
+      <s:element name="GravarFolderCloudDocsComTabelaTemporalidade">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataCapturaFolder" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderIdPai" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice06" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice07" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice08" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice09" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice10" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documentos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tamanhos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Classificacao" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Complemento" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTotalPaginas" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataVencimento" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAvisoVencimento" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="QtdeDiasAvisoVencimento" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observacoes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="flpChaveTransferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashComputer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Evento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TemporalidadeId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataAutuacao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataArquivamento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SuporteId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderCloudDocsComTabelaTemporalidadeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultarTipoDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumentoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarTipoDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarTipoDocumentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderCloudDocsSemDocs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataCapturaFolder" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice05" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice06" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Criptografada" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="flpChaveTransferencia" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Evento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderCloudDocsSemDocsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GravarFolderCloudDocsSemDocsResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarDocumentosDigitalizadosBotaoDireito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataCapturaFolder" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderIdPai" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomePasta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documentos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tamanhos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Classificacao" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Criptografada" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTotalPaginas" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataVencimento" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAvisoVencimento" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="QtdeDiasAvisoVencimento" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observacoes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="flpChaveTransferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashComputer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FTP" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarDocumentosDigitalizadosBotaoDireitoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GravarFolderParaIndexacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataCapturaFolder" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Documentos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tamanhos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTotalPaginas" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Classificacao" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashComputer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderParaIndexacaoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CriarPasta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderIdPai" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomePasta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarPastaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CriarPastaResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaTiposFolderesToTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clienteId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaTiposFolderesToTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaTiposFolderesToTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaTiposFolderesToTablePorUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="usuarioId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="clienteId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaTiposFolderesToTablePorUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaTiposFolderesToTablePorUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaTiposFolderesDigitalizacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="usuarioId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="clienteId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaTiposFolderesDigitalizacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaTiposFolderesDigitalizacaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaClientesDoClientePorUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="usuarioId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="clienteId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaClientesDoClientePorUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaClientesDoClientePorUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaClientesDoCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clienteId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaClientesDoClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaClientesDoClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaEventos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaEventosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaEventosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaTiposDocumentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaTiposDocumentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaTiposDocumentosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarFoldesDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolderId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarFoldesDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarFoldesDocumentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarFoldesDocumentoByPai">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fldIdPai" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarFoldesDocumentoByPaiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarFoldesDocumentoByPaiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaClientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="usuId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaClientesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaClientesCloudDocs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="usuId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaClientesCloudDocsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaClientesCloudDocsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidarUsuarioResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarUsuarioAD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarUsuarioADResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidarUsuarioADResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarUsuarioResult" type="tns:USUARIO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarUsuarioExterno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarUsuarioExternoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarUsuarioExternoResult" type="tns:DOC_USUARIOEXTERNO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaIntegracaoVirtual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clienteId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaIntegracaoVirtualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaIntegracaoVirtualResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaConfiguracaoSistema">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscaConfiguracaoSistemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaConfiguracaoSistemaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaConfiguracaoCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaConfiguracaoClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaConfiguracaoClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdicionarClassificacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolderId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tpdVencimento" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="tpdTempoAviso" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tpdEmailAviso" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdicionarClassificacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AdicionarClassificacaoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AtualizaFolderProcesso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FolderProcessoId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AtualizaFolderProcessoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="VerificaArquivo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Estrutura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TamanhoArquivo" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaArquivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerificaArquivoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaArquivoFolderProcesso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Arquivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TamanhoArquivo" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaArquivoFolderProcessoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerificaArquivoFolderProcessoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderProcesso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Arquivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteOrigem" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Competencia" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TamanhoArquivo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="QtdeFoldes" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderProcessoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GravarFolderProcessoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaLoteComProblemas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaLoteComProblemasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaLoteComProblemasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaFluxoProcesso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaFluxoProcessoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaFluxoProcessoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFolders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoFolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataIni" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataFim" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Situacao" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFoldersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarFoldersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFoldersPorUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoFolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice01" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice03" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indice04" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataIni" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataFim" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Situacao" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFoldersPorUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarFoldersPorUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarDocumentosFolders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarDocumentosFoldersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarDocumentosFoldersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarObservacoesFolders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FolderId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarObservacoesFoldersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarObservacoesFoldersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaChaveTransferencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clienteId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="ChaveTransferencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaChaveTransferenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaChaveTransferenciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaTransferenciaArquivo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Arquivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TamanhoArquivo" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaTransferenciaArquivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerificaTransferenciaArquivoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaDigitalizadora">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaDigitalizadoraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaDigitalizadoraResult" type="tns:DOC_DIGITALIZADORA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirDigitalizadora">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cod" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="digScannerPadrao" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="digADF" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="digDuplex" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="digMostrarInterface" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoImagem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaIntegracao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirDigitalizadoraResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EnviarArquivoTemporario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Tamanho" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarArquivoTemporarioResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EnviarArquivoDataCapture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clienteId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumentoId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Tamanho" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="QuebraArquivo" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarArquivoDataCaptureResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscarObjetosClienteUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PerfilUsuarioId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarObjetosClienteUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarObjetosClienteUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarObjetosClienteUsuarioPerfil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="PerfilUsuarioId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarObjetosClienteUsuarioPerfilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarObjetosClienteUsuarioPerfilResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaSituacaoDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaSituacaoDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaSituacaoDocumentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaAtivacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HashHardWare" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashAtivacao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaAtivacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerificaAtivacaoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarLoteIndexacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolderId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Competencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarLoteIndexacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarLoteIndexacaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderProcessoCQ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Arquivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoFolder" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteOrigem" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Competencia" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TamanhoArquivo" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="QtdeFoldes" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiretorioImagens" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Arquivos" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Situacao" type="s1:char" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarFolderProcessoCQResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GravarFolderProcessoCQResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AtualizaSituacaoFolderProcesso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fldId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Situacao" type="s1:char" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AtualizaSituacaoFolderProcessoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListaFoldersProcessoFiltroCQ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteDocumentoId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Competencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaFoldersProcessoFiltroCQResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaFoldersProcessoFiltroCQResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarArquivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estrutura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buffer" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="Offset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarArquivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EnviarArquivosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaServidorExterno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaServidorExternoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerificaServidorExternoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarMeusDocumetos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ordem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarMeusDocumetosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarMeusDocumetosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CadastrarAlerta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="descricao" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataAviso" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailAviso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mensagem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qtdDias" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fldId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CadastrarAlertaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultaPermissoes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tipoFolderId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="usuarioId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaPermissoesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaPermissoesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarAssinaturas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="docid" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarAssinaturasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarAssinaturasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSolicitacaoDocumentoAberta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="docid" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSolicitacaoDocumentoAbertaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSolicitacaoDocumentoAbertaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultiplasAssinaturas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="docid" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultiplasAssinaturasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MultiplasAssinaturasResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarAreasAssinaturas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tpdId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarAreasAssinaturasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarAreasAssinaturasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarDocumentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarNovaVersaoAssinatura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="caminhoArquivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Docid" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeArquivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tamanhoArquivo" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="iTotalPaginas" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="usuarioId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="origemUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarNovaVersaoAssinaturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CriarNovaVersaoAssinaturaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CliId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarListaGenerica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CliId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarListaGenericaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarListaGenericaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarTabelaTemporaridade">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CliId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarTabelaTemporaridadeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarTabelaTemporaridadeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="USUARIO">
+        <s:sequence>
+          <s:element name="USUID" type="s:decimal" />
+          <s:element name="PCLID" type="s:decimal" />
+          <s:element name="USULOGIN" type="s:string" />
+          <s:element name="USUEMAIL" type="s:string" />
+          <s:element name="USUNOMECOMPLETO" type="s:string" />
+          <s:element name="USUSENHA" type="s:string" />
+          <s:element name="USUDATAHORACRIACAO" type="s:dateTime" />
+          <s:element name="USUATIVO" type="s:boolean" />
+          <s:element name="ADMIN" type="s:boolean" />
+          <s:element name="USUBLOQUEIOETAPAS" type="s:boolean" />
+          <s:element name="USUIDCLIENTE" type="s:decimal" />
+          <s:element name="USUALTERASENHA" type="s:boolean" />
+          <s:element name="USUBLOQUEIOHORARIO" type="s:boolean" />
+          <s:element name="USUCONSULTASUA" type="s:boolean" />
+          <s:element name="cliDocId" type="s:decimal" />
+          <s:element name="USUASSINADOCS" type="s:boolean" />
+          <s:element name="USUCERTIFICADODIGITAL" type="s:string" />
+          <s:element name="USUSENHACERTIFICADO" type="s:string" />
+          <s:element name="USUIGNORAORIGEMFILA" type="s:boolean" />
+          <s:element name="USUPROFISSAO" type="s:string" />
+          <s:element name="USUTELEFONE" type="s:string" />
+          <s:element name="USUCPF" type="s:string" />
+          <s:element name="USUPREVIEWDOC" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DOC_DIGITALIZADORA">
+        <s:sequence>
+          <s:element name="digCod" type="s:string" />
+          <s:element name="CLIID" type="s:int" />
+          <s:element name="digScannerPadrao" type="s:string" />
+          <s:element name="digADF" type="s:boolean" />
+          <s:element name="digDuplex" type="s:boolean" />
+          <s:element name="digMostrarInterface" type="s:boolean" />
+          <s:element name="digProgramaCaptura" type="s:string" />
+          <s:element name="digTipoImagem" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DOC_USUARIOEXTERNO">
+        <s:sequence>
+          <s:element name="USEID" type="s:decimal" />
+          <s:element name="CLIID" type="s:int" />
+          <s:element name="USELOGIN" type="s:string" />
+          <s:element name="USENOME" type="s:string" />
+          <s:element name="USESENHA" type="s:string" />
+          <s:element name="USEMATRICULA" type="s:string" />
+          <s:element name="USEEMAIL" type="s:string" />
+          <s:element name="USESITUACAO" type="s:string" />
+          <s:element name="USERG" type="s:string" />
+          <s:element name="USEENDERECO" type="s:string" />
+          <s:element name="USEBAIRRO" type="s:string" />
+          <s:element name="USECEP" type="s:string" />
+          <s:element name="USECIDADE" type="s:string" />
+          <s:element name="USEESTADO" type="s:string" />
+          <s:element name="USETELEFONE" type="s:string" />
+          <s:element name="USERAZAOSOCIAL" type="s:string" />
+          <s:element name="USECNPJ" type="s:string" />
+          <s:element name="USECARGO" type="s:string" />
+          <s:element name="USEDATAHORACRIACAO" type="s:dateTime" />
+          <s:element name="USETERMOACEITE" type="s:boolean" />
+          <s:element name="USEDATAHORATERMOACEITE" type="s:dateTime" />
+          <s:element name="USEIPACESSOACEITE" type="s:string" />
+          <s:element name="USEALTERASENHA" type="s:boolean" />
+          <s:element name="USEPREVIEWDOC" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GravarDocumentosDigitalizadosComObsSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarDocumentosDigitalizadosComObs" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosComObsSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarDocumentosDigitalizadosComObsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosComObsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarDocumentosDigitalizados" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarDocumentosDigitalizadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosComEventoSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarDocumentosDigitalizadosComEvento" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosComEventoSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarDocumentosDigitalizadosComEventoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosComEventoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosComHTTPSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarDocumentosDigitalizadosComHTTP" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosComHTTPSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarDocumentosDigitalizadosComHTTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosComHTTPAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocs" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsComComplementoSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocsComComplemento" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsComComplementoSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocsComComplementoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsComComplementoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsIndice10SoapIn">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocsIndice10" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsIndice10SoapOut">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocsIndice10Response" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsIndice10AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsComTabelaTemporalidadeSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocsComTabelaTemporalidade" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsComTabelaTemporalidadeSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocsComTabelaTemporalidadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsComTabelaTemporalidadeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTipoDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoDocumento" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTipoDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTipoDocumentoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsSemDocsSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocsSemDocs" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsSemDocsSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarFolderCloudDocsSemDocsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderCloudDocsSemDocsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosBotaoDireitoSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarDocumentosDigitalizadosBotaoDireito" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosBotaoDireitoSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarDocumentosDigitalizadosBotaoDireitoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarDocumentosDigitalizadosBotaoDireitoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderParaIndexacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarFolderParaIndexacao" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderParaIndexacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarFolderParaIndexacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderParaIndexacaoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CriarPastaSoapIn">
+    <wsdl:part name="parameters" element="tns:CriarPasta" />
+  </wsdl:message>
+  <wsdl:message name="CriarPastaSoapOut">
+    <wsdl:part name="parameters" element="tns:CriarPastaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CriarPastaAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposFolderesToTableSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaTiposFolderesToTable" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposFolderesToTableSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaTiposFolderesToTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposFolderesToTableAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposFolderesToTablePorUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaTiposFolderesToTablePorUsuario" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposFolderesToTablePorUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaTiposFolderesToTablePorUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposFolderesToTablePorUsuarioAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposFolderesDigitalizacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaTiposFolderesDigitalizacao" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposFolderesDigitalizacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaTiposFolderesDigitalizacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposFolderesDigitalizacaoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesDoClientePorUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaClientesDoClientePorUsuario" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesDoClientePorUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaClientesDoClientePorUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesDoClientePorUsuarioAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesDoClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaClientesDoCliente" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesDoClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaClientesDoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesDoClienteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaEventosSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaEventos" />
+  </wsdl:message>
+  <wsdl:message name="BuscaEventosSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaEventosResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaEventosAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposDocumentosSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaTiposDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposDocumentosSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaTiposDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaTiposDocumentosAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscarFoldesDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarFoldesDocumento" />
+  </wsdl:message>
+  <wsdl:message name="BuscarFoldesDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarFoldesDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarFoldesDocumentoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscarFoldesDocumentoByPaiSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarFoldesDocumentoByPai" />
+  </wsdl:message>
+  <wsdl:message name="BuscarFoldesDocumentoByPaiSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarFoldesDocumentoByPaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarFoldesDocumentoByPaiAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaClientes" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesCloudDocsSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaClientesCloudDocs" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesCloudDocsSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaClientesCloudDocsResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaClientesCloudDocsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioADSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioAD" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioADSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioADResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioADAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioExternoSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarUsuarioExterno" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioExternoSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarUsuarioExternoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioExternoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaIntegracaoVirtualSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaIntegracaoVirtual" />
+  </wsdl:message>
+  <wsdl:message name="BuscaIntegracaoVirtualSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaIntegracaoVirtualResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaIntegracaoVirtualAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaConfiguracaoSistemaSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaConfiguracaoSistema" />
+  </wsdl:message>
+  <wsdl:message name="BuscaConfiguracaoSistemaSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaConfiguracaoSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaConfiguracaoSistemaAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaConfiguracaoClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaConfiguracaoCliente" />
+  </wsdl:message>
+  <wsdl:message name="BuscaConfiguracaoClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaConfiguracaoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaConfiguracaoClienteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AdicionarClassificacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:AdicionarClassificacao" />
+  </wsdl:message>
+  <wsdl:message name="AdicionarClassificacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:AdicionarClassificacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdicionarClassificacaoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AtualizaFolderProcessoSoapIn">
+    <wsdl:part name="parameters" element="tns:AtualizaFolderProcesso" />
+  </wsdl:message>
+  <wsdl:message name="AtualizaFolderProcessoSoapOut">
+    <wsdl:part name="parameters" element="tns:AtualizaFolderProcessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AtualizaFolderProcessoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="VerificaArquivoSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificaArquivo" />
+  </wsdl:message>
+  <wsdl:message name="VerificaArquivoSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificaArquivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificaArquivoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="VerificaArquivoFolderProcessoSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificaArquivoFolderProcesso" />
+  </wsdl:message>
+  <wsdl:message name="VerificaArquivoFolderProcessoSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificaArquivoFolderProcessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificaArquivoFolderProcessoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderProcessoSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarFolderProcesso" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderProcessoSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarFolderProcessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderProcessoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaLoteComProblemasSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaLoteComProblemas" />
+  </wsdl:message>
+  <wsdl:message name="BuscaLoteComProblemasSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaLoteComProblemasResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaLoteComProblemasAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaFluxoProcessoSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaFluxoProcesso" />
+  </wsdl:message>
+  <wsdl:message name="BuscaFluxoProcessoSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaFluxoProcessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaFluxoProcessoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFoldersSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarFolders" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFoldersSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFoldersAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFoldersPorUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarFoldersPorUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFoldersPorUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarFoldersPorUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFoldersPorUsuarioAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarDocumentosFoldersSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarDocumentosFolders" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarDocumentosFoldersSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarDocumentosFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarDocumentosFoldersAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarObservacoesFoldersSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarObservacoesFolders" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarObservacoesFoldersSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarObservacoesFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarObservacoesFoldersAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaChaveTransferenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaChaveTransferencia" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaChaveTransferenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaChaveTransferenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaChaveTransferenciaAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="VerificaTransferenciaArquivoSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificaTransferenciaArquivo" />
+  </wsdl:message>
+  <wsdl:message name="VerificaTransferenciaArquivoSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificaTransferenciaArquivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificaTransferenciaArquivoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaDigitalizadoraSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaDigitalizadora" />
+  </wsdl:message>
+  <wsdl:message name="BuscaDigitalizadoraSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaDigitalizadoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaDigitalizadoraAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="InserirDigitalizadoraSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirDigitalizadora" />
+  </wsdl:message>
+  <wsdl:message name="InserirDigitalizadoraSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirDigitalizadoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirDigitalizadoraAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="EnviarArquivoTemporarioSoapIn">
+    <wsdl:part name="parameters" element="tns:EnviarArquivoTemporario" />
+  </wsdl:message>
+  <wsdl:message name="EnviarArquivoTemporarioSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviarArquivoTemporarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnviarArquivoTemporarioAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="EnviarArquivoDataCaptureSoapIn">
+    <wsdl:part name="parameters" element="tns:EnviarArquivoDataCapture" />
+  </wsdl:message>
+  <wsdl:message name="EnviarArquivoDataCaptureSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviarArquivoDataCaptureResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnviarArquivoDataCaptureAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscarObjetosClienteUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarObjetosClienteUsuario" />
+  </wsdl:message>
+  <wsdl:message name="BuscarObjetosClienteUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarObjetosClienteUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarObjetosClienteUsuarioAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscarObjetosClienteUsuarioPerfilSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarObjetosClienteUsuarioPerfil" />
+  </wsdl:message>
+  <wsdl:message name="BuscarObjetosClienteUsuarioPerfilSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarObjetosClienteUsuarioPerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarObjetosClienteUsuarioPerfilAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscaSituacaoDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaSituacaoDocumento" />
+  </wsdl:message>
+  <wsdl:message name="BuscaSituacaoDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaSituacaoDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaSituacaoDocumentoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="VerificaAtivacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificaAtivacao" />
+  </wsdl:message>
+  <wsdl:message name="VerificaAtivacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificaAtivacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificaAtivacaoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscarLoteIndexacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarLoteIndexacao" />
+  </wsdl:message>
+  <wsdl:message name="BuscarLoteIndexacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarLoteIndexacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarLoteIndexacaoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderProcessoCQSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarFolderProcessoCQ" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderProcessoCQSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarFolderProcessoCQResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarFolderProcessoCQAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AtualizaSituacaoFolderProcessoSoapIn">
+    <wsdl:part name="parameters" element="tns:AtualizaSituacaoFolderProcesso" />
+  </wsdl:message>
+  <wsdl:message name="AtualizaSituacaoFolderProcessoSoapOut">
+    <wsdl:part name="parameters" element="tns:AtualizaSituacaoFolderProcessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AtualizaSituacaoFolderProcessoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListaFoldersProcessoFiltroCQSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaFoldersProcessoFiltroCQ" />
+  </wsdl:message>
+  <wsdl:message name="ListaFoldersProcessoFiltroCQSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaFoldersProcessoFiltroCQResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaFoldersProcessoFiltroCQAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="EnviarArquivosSoapIn">
+    <wsdl:part name="parameters" element="tns:EnviarArquivos" />
+  </wsdl:message>
+  <wsdl:message name="EnviarArquivosSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviarArquivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnviarArquivosAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="VerificaServidorExternoSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificaServidorExterno" />
+  </wsdl:message>
+  <wsdl:message name="VerificaServidorExternoSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificaServidorExternoResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificaServidorExternoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuscarMeusDocumetosSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarMeusDocumetos" />
+  </wsdl:message>
+  <wsdl:message name="BuscarMeusDocumetosSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarMeusDocumetosResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarMeusDocumetosAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CadastrarAlertaSoapIn">
+    <wsdl:part name="parameters" element="tns:CadastrarAlerta" />
+  </wsdl:message>
+  <wsdl:message name="CadastrarAlertaSoapOut">
+    <wsdl:part name="parameters" element="tns:CadastrarAlertaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CadastrarAlertaAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPermissoesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaPermissoes" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPermissoesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaPermissoesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPermissoesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarAssinaturasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarAssinaturas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarAssinaturasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarAssinaturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarAssinaturasAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSolicitacaoDocumentoAbertaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSolicitacaoDocumentoAberta" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSolicitacaoDocumentoAbertaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSolicitacaoDocumentoAbertaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSolicitacaoDocumentoAbertaAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="MultiplasAssinaturasSoapIn">
+    <wsdl:part name="parameters" element="tns:MultiplasAssinaturas" />
+  </wsdl:message>
+  <wsdl:message name="MultiplasAssinaturasSoapOut">
+    <wsdl:part name="parameters" element="tns:MultiplasAssinaturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="MultiplasAssinaturasAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarAreasAssinaturasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarAreasAssinaturas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarAreasAssinaturasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarAreasAssinaturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarAreasAssinaturasAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarDocumento" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarDocumentoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CriarNovaVersaoAssinaturaSoapIn">
+    <wsdl:part name="parameters" element="tns:CriarNovaVersaoAssinatura" />
+  </wsdl:message>
+  <wsdl:message name="CriarNovaVersaoAssinaturaSoapOut">
+    <wsdl:part name="parameters" element="tns:CriarNovaVersaoAssinaturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CriarNovaVersaoAssinaturaAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarCliente" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarListaGenericaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarListaGenerica" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarListaGenericaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarListaGenericaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarListaGenericaAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTabelaTemporaridadeSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarTabelaTemporaridade" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTabelaTemporaridadeSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarTabelaTemporaridadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTabelaTemporaridadeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="WSDocs2Soap">
+    <wsdl:operation name="GravarDocumentosDigitalizadosComObs">
+      <wsdl:input message="tns:GravarDocumentosDigitalizadosComObsSoapIn" />
+      <wsdl:output message="tns:GravarDocumentosDigitalizadosComObsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizados">
+      <wsdl:input message="tns:GravarDocumentosDigitalizadosSoapIn" />
+      <wsdl:output message="tns:GravarDocumentosDigitalizadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizadosComEvento">
+      <wsdl:input message="tns:GravarDocumentosDigitalizadosComEventoSoapIn" />
+      <wsdl:output message="tns:GravarDocumentosDigitalizadosComEventoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizadosComHTTP">
+      <wsdl:input message="tns:GravarDocumentosDigitalizadosComHTTPSoapIn" />
+      <wsdl:output message="tns:GravarDocumentosDigitalizadosComHTTPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocs">
+      <wsdl:input message="tns:GravarFolderCloudDocsSoapIn" />
+      <wsdl:output message="tns:GravarFolderCloudDocsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsComComplemento">
+      <wsdl:input message="tns:GravarFolderCloudDocsComComplementoSoapIn" />
+      <wsdl:output message="tns:GravarFolderCloudDocsComComplementoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsIndice10">
+      <wsdl:input message="tns:GravarFolderCloudDocsIndice10SoapIn" />
+      <wsdl:output message="tns:GravarFolderCloudDocsIndice10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsComTabelaTemporalidade">
+      <wsdl:input message="tns:GravarFolderCloudDocsComTabelaTemporalidadeSoapIn" />
+      <wsdl:output message="tns:GravarFolderCloudDocsComTabelaTemporalidadeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoDocumento">
+      <wsdl:input message="tns:ConsultarTipoDocumentoSoapIn" />
+      <wsdl:output message="tns:ConsultarTipoDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsSemDocs">
+      <wsdl:input message="tns:GravarFolderCloudDocsSemDocsSoapIn" />
+      <wsdl:output message="tns:GravarFolderCloudDocsSemDocsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizadosBotaoDireito">
+      <wsdl:input message="tns:GravarDocumentosDigitalizadosBotaoDireitoSoapIn" />
+      <wsdl:output message="tns:GravarDocumentosDigitalizadosBotaoDireitoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderParaIndexacao">
+      <wsdl:input message="tns:GravarFolderParaIndexacaoSoapIn" />
+      <wsdl:output message="tns:GravarFolderParaIndexacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CriarPasta">
+      <wsdl:input message="tns:CriarPastaSoapIn" />
+      <wsdl:output message="tns:CriarPastaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposFolderesToTable">
+      <wsdl:input message="tns:BuscaTiposFolderesToTableSoapIn" />
+      <wsdl:output message="tns:BuscaTiposFolderesToTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposFolderesToTablePorUsuario">
+      <wsdl:input message="tns:BuscaTiposFolderesToTablePorUsuarioSoapIn" />
+      <wsdl:output message="tns:BuscaTiposFolderesToTablePorUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposFolderesDigitalizacao">
+      <wsdl:input message="tns:BuscaTiposFolderesDigitalizacaoSoapIn" />
+      <wsdl:output message="tns:BuscaTiposFolderesDigitalizacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientesDoClientePorUsuario">
+      <wsdl:input message="tns:BuscaClientesDoClientePorUsuarioSoapIn" />
+      <wsdl:output message="tns:BuscaClientesDoClientePorUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientesDoCliente">
+      <wsdl:input message="tns:BuscaClientesDoClienteSoapIn" />
+      <wsdl:output message="tns:BuscaClientesDoClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaEventos">
+      <wsdl:input message="tns:BuscaEventosSoapIn" />
+      <wsdl:output message="tns:BuscaEventosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposDocumentos">
+      <wsdl:input message="tns:BuscaTiposDocumentosSoapIn" />
+      <wsdl:output message="tns:BuscaTiposDocumentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarFoldesDocumento">
+      <wsdl:input message="tns:BuscarFoldesDocumentoSoapIn" />
+      <wsdl:output message="tns:BuscarFoldesDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarFoldesDocumentoByPai">
+      <wsdl:input message="tns:BuscarFoldesDocumentoByPaiSoapIn" />
+      <wsdl:output message="tns:BuscarFoldesDocumentoByPaiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientes">
+      <wsdl:input message="tns:BuscaClientesSoapIn" />
+      <wsdl:output message="tns:BuscaClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientesCloudDocs">
+      <wsdl:input message="tns:BuscaClientesCloudDocsSoapIn" />
+      <wsdl:output message="tns:BuscaClientesCloudDocsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input message="tns:ValidarUsuarioSoapIn" />
+      <wsdl:output message="tns:ValidarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuarioAD">
+      <wsdl:input message="tns:ValidarUsuarioADSoapIn" />
+      <wsdl:output message="tns:ValidarUsuarioADSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <wsdl:input message="tns:BuscarUsuarioSoapIn" />
+      <wsdl:output message="tns:BuscarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuarioExterno">
+      <wsdl:input message="tns:BuscarUsuarioExternoSoapIn" />
+      <wsdl:output message="tns:BuscarUsuarioExternoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaIntegracaoVirtual">
+      <wsdl:input message="tns:BuscaIntegracaoVirtualSoapIn" />
+      <wsdl:output message="tns:BuscaIntegracaoVirtualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaConfiguracaoSistema">
+      <wsdl:input message="tns:BuscaConfiguracaoSistemaSoapIn" />
+      <wsdl:output message="tns:BuscaConfiguracaoSistemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaConfiguracaoCliente">
+      <wsdl:input message="tns:BuscaConfiguracaoClienteSoapIn" />
+      <wsdl:output message="tns:BuscaConfiguracaoClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdicionarClassificacao">
+      <wsdl:input message="tns:AdicionarClassificacaoSoapIn" />
+      <wsdl:output message="tns:AdicionarClassificacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizaFolderProcesso">
+      <wsdl:input message="tns:AtualizaFolderProcessoSoapIn" />
+      <wsdl:output message="tns:AtualizaFolderProcessoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaArquivo">
+      <wsdl:input message="tns:VerificaArquivoSoapIn" />
+      <wsdl:output message="tns:VerificaArquivoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaArquivoFolderProcesso">
+      <wsdl:input message="tns:VerificaArquivoFolderProcessoSoapIn" />
+      <wsdl:output message="tns:VerificaArquivoFolderProcessoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderProcesso">
+      <wsdl:input message="tns:GravarFolderProcessoSoapIn" />
+      <wsdl:output message="tns:GravarFolderProcessoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaLoteComProblemas">
+      <wsdl:input message="tns:BuscaLoteComProblemasSoapIn" />
+      <wsdl:output message="tns:BuscaLoteComProblemasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaFluxoProcesso">
+      <wsdl:input message="tns:BuscaFluxoProcessoSoapIn" />
+      <wsdl:output message="tns:BuscaFluxoProcessoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFolders">
+      <wsdl:input message="tns:ConsultarFoldersSoapIn" />
+      <wsdl:output message="tns:ConsultarFoldersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFoldersPorUsuario">
+      <wsdl:input message="tns:ConsultarFoldersPorUsuarioSoapIn" />
+      <wsdl:output message="tns:ConsultarFoldersPorUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDocumentosFolders">
+      <wsdl:input message="tns:ConsultarDocumentosFoldersSoapIn" />
+      <wsdl:output message="tns:ConsultarDocumentosFoldersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarObservacoesFolders">
+      <wsdl:input message="tns:ConsultarObservacoesFoldersSoapIn" />
+      <wsdl:output message="tns:ConsultarObservacoesFoldersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaChaveTransferencia">
+      <wsdl:input message="tns:ConsultaChaveTransferenciaSoapIn" />
+      <wsdl:output message="tns:ConsultaChaveTransferenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaTransferenciaArquivo">
+      <wsdl:input message="tns:VerificaTransferenciaArquivoSoapIn" />
+      <wsdl:output message="tns:VerificaTransferenciaArquivoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaDigitalizadora">
+      <wsdl:input message="tns:BuscaDigitalizadoraSoapIn" />
+      <wsdl:output message="tns:BuscaDigitalizadoraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirDigitalizadora">
+      <wsdl:input message="tns:InserirDigitalizadoraSoapIn" />
+      <wsdl:output message="tns:InserirDigitalizadoraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarArquivoTemporario">
+      <wsdl:input message="tns:EnviarArquivoTemporarioSoapIn" />
+      <wsdl:output message="tns:EnviarArquivoTemporarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarArquivoDataCapture">
+      <wsdl:input message="tns:EnviarArquivoDataCaptureSoapIn" />
+      <wsdl:output message="tns:EnviarArquivoDataCaptureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarObjetosClienteUsuario">
+      <wsdl:input message="tns:BuscarObjetosClienteUsuarioSoapIn" />
+      <wsdl:output message="tns:BuscarObjetosClienteUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarObjetosClienteUsuarioPerfil">
+      <wsdl:input message="tns:BuscarObjetosClienteUsuarioPerfilSoapIn" />
+      <wsdl:output message="tns:BuscarObjetosClienteUsuarioPerfilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaSituacaoDocumento">
+      <wsdl:input message="tns:BuscaSituacaoDocumentoSoapIn" />
+      <wsdl:output message="tns:BuscaSituacaoDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaAtivacao">
+      <wsdl:input message="tns:VerificaAtivacaoSoapIn" />
+      <wsdl:output message="tns:VerificaAtivacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarLoteIndexacao">
+      <wsdl:input message="tns:BuscarLoteIndexacaoSoapIn" />
+      <wsdl:output message="tns:BuscarLoteIndexacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderProcessoCQ">
+      <wsdl:input message="tns:GravarFolderProcessoCQSoapIn" />
+      <wsdl:output message="tns:GravarFolderProcessoCQSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizaSituacaoFolderProcesso">
+      <wsdl:input message="tns:AtualizaSituacaoFolderProcessoSoapIn" />
+      <wsdl:output message="tns:AtualizaSituacaoFolderProcessoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaFoldersProcessoFiltroCQ">
+      <wsdl:input message="tns:ListaFoldersProcessoFiltroCQSoapIn" />
+      <wsdl:output message="tns:ListaFoldersProcessoFiltroCQSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarArquivos">
+      <wsdl:input message="tns:EnviarArquivosSoapIn" />
+      <wsdl:output message="tns:EnviarArquivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaServidorExterno">
+      <wsdl:input message="tns:VerificaServidorExternoSoapIn" />
+      <wsdl:output message="tns:VerificaServidorExternoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMeusDocumetos">
+      <wsdl:input message="tns:BuscarMeusDocumetosSoapIn" />
+      <wsdl:output message="tns:BuscarMeusDocumetosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarAlerta">
+      <wsdl:input message="tns:CadastrarAlertaSoapIn" />
+      <wsdl:output message="tns:CadastrarAlertaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPermissoes">
+      <wsdl:input message="tns:ConsultaPermissoesSoapIn" />
+      <wsdl:output message="tns:ConsultaPermissoesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAssinaturas">
+      <wsdl:input message="tns:ConsultarAssinaturasSoapIn" />
+      <wsdl:output message="tns:ConsultarAssinaturasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSolicitacaoDocumentoAberta">
+      <wsdl:input message="tns:ConsultarSolicitacaoDocumentoAbertaSoapIn" />
+      <wsdl:output message="tns:ConsultarSolicitacaoDocumentoAbertaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiplasAssinaturas">
+      <wsdl:input message="tns:MultiplasAssinaturasSoapIn" />
+      <wsdl:output message="tns:MultiplasAssinaturasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAreasAssinaturas">
+      <wsdl:input message="tns:ConsultarAreasAssinaturasSoapIn" />
+      <wsdl:output message="tns:ConsultarAreasAssinaturasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDocumento">
+      <wsdl:input message="tns:ConsultarDocumentoSoapIn" />
+      <wsdl:output message="tns:ConsultarDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CriarNovaVersaoAssinatura">
+      <wsdl:input message="tns:CriarNovaVersaoAssinaturaSoapIn" />
+      <wsdl:output message="tns:CriarNovaVersaoAssinaturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCliente">
+      <wsdl:input message="tns:ConsultarClienteSoapIn" />
+      <wsdl:output message="tns:ConsultarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarListaGenerica">
+      <wsdl:input message="tns:ConsultarListaGenericaSoapIn" />
+      <wsdl:output message="tns:ConsultarListaGenericaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTabelaTemporaridade">
+      <wsdl:input message="tns:ConsultarTabelaTemporaridadeSoapIn" />
+      <wsdl:output message="tns:ConsultarTabelaTemporaridadeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSDocs2Soap" type="tns:WSDocs2Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GravarDocumentosDigitalizadosComObs">
+      <soap:operation soapAction="http://tempuri.org/GravarDocumentosDigitalizadosComObs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarDocumentosDigitalizadosComObsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizados">
+      <soap:operation soapAction="http://tempuri.org/GravarDocumentosDigitalizados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarDocumentosDigitalizadosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizadosComEvento">
+      <soap:operation soapAction="http://tempuri.org/GravarDocumentosDigitalizadosComEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarDocumentosDigitalizadosComEventoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizadosComHTTP">
+      <soap:operation soapAction="http://tempuri.org/GravarDocumentosDigitalizadosComHTTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarDocumentosDigitalizadosComHTTPAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocs">
+      <soap:operation soapAction="http://tempuri.org/GravarFolderCloudDocs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarFolderCloudDocsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsComComplemento">
+      <soap:operation soapAction="http://tempuri.org/GravarFolderCloudDocsComComplemento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarFolderCloudDocsComComplementoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsIndice10">
+      <soap:operation soapAction="http://tempuri.org/GravarFolderCloudDocsIndice10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarFolderCloudDocsIndice10AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsComTabelaTemporalidade">
+      <soap:operation soapAction="http://tempuri.org/GravarFolderCloudDocsComTabelaTemporalidade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarFolderCloudDocsComTabelaTemporalidadeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoDocumento">
+      <soap:operation soapAction="http://tempuri.org/ConsultarTipoDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarTipoDocumentoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsSemDocs">
+      <soap:operation soapAction="http://tempuri.org/GravarFolderCloudDocsSemDocs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarFolderCloudDocsSemDocsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizadosBotaoDireito">
+      <soap:operation soapAction="http://tempuri.org/GravarDocumentosDigitalizadosBotaoDireito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarDocumentosDigitalizadosBotaoDireitoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderParaIndexacao">
+      <soap:operation soapAction="http://tempuri.org/GravarFolderParaIndexacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarFolderParaIndexacaoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarPasta">
+      <soap:operation soapAction="http://tempuri.org/CriarPasta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CriarPastaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposFolderesToTable">
+      <soap:operation soapAction="http://tempuri.org/BuscaTiposFolderesToTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaTiposFolderesToTableAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposFolderesToTablePorUsuario">
+      <soap:operation soapAction="http://tempuri.org/BuscaTiposFolderesToTablePorUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaTiposFolderesToTablePorUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposFolderesDigitalizacao">
+      <soap:operation soapAction="http://tempuri.org/BuscaTiposFolderesDigitalizacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaTiposFolderesDigitalizacaoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientesDoClientePorUsuario">
+      <soap:operation soapAction="http://tempuri.org/BuscaClientesDoClientePorUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaClientesDoClientePorUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientesDoCliente">
+      <soap:operation soapAction="http://tempuri.org/BuscaClientesDoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaClientesDoClienteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaEventos">
+      <soap:operation soapAction="http://tempuri.org/BuscaEventos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaEventosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposDocumentos">
+      <soap:operation soapAction="http://tempuri.org/BuscaTiposDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaTiposDocumentosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarFoldesDocumento">
+      <soap:operation soapAction="http://tempuri.org/BuscarFoldesDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscarFoldesDocumentoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarFoldesDocumentoByPai">
+      <soap:operation soapAction="http://tempuri.org/BuscarFoldesDocumentoByPai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscarFoldesDocumentoByPaiAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientes">
+      <soap:operation soapAction="http://tempuri.org/BuscaClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaClientesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientesCloudDocs">
+      <soap:operation soapAction="http://tempuri.org/BuscaClientesCloudDocs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaClientesCloudDocsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap:operation soapAction="http://tempuri.org/ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidarUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuarioAD">
+      <soap:operation soapAction="http://tempuri.org/ValidarUsuarioAD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidarUsuarioADAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <soap:operation soapAction="http://tempuri.org/BuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscarUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuarioExterno">
+      <soap:operation soapAction="http://tempuri.org/BuscarUsuarioExterno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscarUsuarioExternoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaIntegracaoVirtual">
+      <soap:operation soapAction="http://tempuri.org/BuscaIntegracaoVirtual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaIntegracaoVirtualAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaConfiguracaoSistema">
+      <soap:operation soapAction="http://tempuri.org/BuscaConfiguracaoSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaConfiguracaoSistemaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaConfiguracaoCliente">
+      <soap:operation soapAction="http://tempuri.org/BuscaConfiguracaoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaConfiguracaoClienteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdicionarClassificacao">
+      <soap:operation soapAction="http://tempuri.org/AdicionarClassificacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AdicionarClassificacaoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizaFolderProcesso">
+      <soap:operation soapAction="http://tempuri.org/AtualizaFolderProcesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AtualizaFolderProcessoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaArquivo">
+      <soap:operation soapAction="http://tempuri.org/VerificaArquivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerificaArquivoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaArquivoFolderProcesso">
+      <soap:operation soapAction="http://tempuri.org/VerificaArquivoFolderProcesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerificaArquivoFolderProcessoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderProcesso">
+      <soap:operation soapAction="http://tempuri.org/GravarFolderProcesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarFolderProcessoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaLoteComProblemas">
+      <soap:operation soapAction="http://tempuri.org/BuscaLoteComProblemas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaLoteComProblemasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaFluxoProcesso">
+      <soap:operation soapAction="http://tempuri.org/BuscaFluxoProcesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaFluxoProcessoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFolders">
+      <soap:operation soapAction="http://tempuri.org/ConsultarFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarFoldersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFoldersPorUsuario">
+      <soap:operation soapAction="http://tempuri.org/ConsultarFoldersPorUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarFoldersPorUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDocumentosFolders">
+      <soap:operation soapAction="http://tempuri.org/ConsultarDocumentosFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarDocumentosFoldersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarObservacoesFolders">
+      <soap:operation soapAction="http://tempuri.org/ConsultarObservacoesFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarObservacoesFoldersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaChaveTransferencia">
+      <soap:operation soapAction="http://tempuri.org/ConsultaChaveTransferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaChaveTransferenciaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaTransferenciaArquivo">
+      <soap:operation soapAction="http://tempuri.org/VerificaTransferenciaArquivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerificaTransferenciaArquivoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaDigitalizadora">
+      <soap:operation soapAction="http://tempuri.org/BuscaDigitalizadora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaDigitalizadoraAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirDigitalizadora">
+      <soap:operation soapAction="http://tempuri.org/InserirDigitalizadora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InserirDigitalizadoraAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarArquivoTemporario">
+      <soap:operation soapAction="http://tempuri.org/EnviarArquivoTemporario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EnviarArquivoTemporarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarArquivoDataCapture">
+      <soap:operation soapAction="http://tempuri.org/EnviarArquivoDataCapture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EnviarArquivoDataCaptureAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarObjetosClienteUsuario">
+      <soap:operation soapAction="http://tempuri.org/BuscarObjetosClienteUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscarObjetosClienteUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarObjetosClienteUsuarioPerfil">
+      <soap:operation soapAction="http://tempuri.org/BuscarObjetosClienteUsuarioPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscarObjetosClienteUsuarioPerfilAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaSituacaoDocumento">
+      <soap:operation soapAction="http://tempuri.org/BuscaSituacaoDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscaSituacaoDocumentoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaAtivacao">
+      <soap:operation soapAction="http://tempuri.org/VerificaAtivacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerificaAtivacaoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarLoteIndexacao">
+      <soap:operation soapAction="http://tempuri.org/BuscarLoteIndexacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscarLoteIndexacaoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderProcessoCQ">
+      <soap:operation soapAction="http://tempuri.org/GravarFolderProcessoCQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GravarFolderProcessoCQAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizaSituacaoFolderProcesso">
+      <soap:operation soapAction="http://tempuri.org/AtualizaSituacaoFolderProcesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AtualizaSituacaoFolderProcessoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaFoldersProcessoFiltroCQ">
+      <soap:operation soapAction="http://tempuri.org/ListaFoldersProcessoFiltroCQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListaFoldersProcessoFiltroCQAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarArquivos">
+      <soap:operation soapAction="http://tempuri.org/EnviarArquivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EnviarArquivosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaServidorExterno">
+      <soap:operation soapAction="http://tempuri.org/VerificaServidorExterno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerificaServidorExternoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMeusDocumetos">
+      <soap:operation soapAction="http://tempuri.org/BuscarMeusDocumetos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuscarMeusDocumetosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarAlerta">
+      <soap:operation soapAction="http://tempuri.org/CadastrarAlerta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CadastrarAlertaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPermissoes">
+      <soap:operation soapAction="http://tempuri.org/ConsultaPermissoes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaPermissoesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAssinaturas">
+      <soap:operation soapAction="http://tempuri.org/ConsultarAssinaturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarAssinaturasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSolicitacaoDocumentoAberta">
+      <soap:operation soapAction="http://tempuri.org/ConsultarSolicitacaoDocumentoAberta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarSolicitacaoDocumentoAbertaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplasAssinaturas">
+      <soap:operation soapAction="http://tempuri.org/MultiplasAssinaturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MultiplasAssinaturasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAreasAssinaturas">
+      <soap:operation soapAction="http://tempuri.org/ConsultarAreasAssinaturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarAreasAssinaturasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDocumento">
+      <soap:operation soapAction="http://tempuri.org/ConsultarDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarDocumentoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarNovaVersaoAssinatura">
+      <soap:operation soapAction="http://tempuri.org/CriarNovaVersaoAssinatura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CriarNovaVersaoAssinaturaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCliente">
+      <soap:operation soapAction="http://tempuri.org/ConsultarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarClienteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarListaGenerica">
+      <soap:operation soapAction="http://tempuri.org/ConsultarListaGenerica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarListaGenericaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTabelaTemporaridade">
+      <soap:operation soapAction="http://tempuri.org/ConsultarTabelaTemporaridade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarTabelaTemporaridadeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSDocs2Soap12" type="tns:WSDocs2Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GravarDocumentosDigitalizadosComObs">
+      <soap12:operation soapAction="http://tempuri.org/GravarDocumentosDigitalizadosComObs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarDocumentosDigitalizadosComObsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizados">
+      <soap12:operation soapAction="http://tempuri.org/GravarDocumentosDigitalizados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarDocumentosDigitalizadosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizadosComEvento">
+      <soap12:operation soapAction="http://tempuri.org/GravarDocumentosDigitalizadosComEvento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarDocumentosDigitalizadosComEventoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizadosComHTTP">
+      <soap12:operation soapAction="http://tempuri.org/GravarDocumentosDigitalizadosComHTTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarDocumentosDigitalizadosComHTTPAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocs">
+      <soap12:operation soapAction="http://tempuri.org/GravarFolderCloudDocs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarFolderCloudDocsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsComComplemento">
+      <soap12:operation soapAction="http://tempuri.org/GravarFolderCloudDocsComComplemento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarFolderCloudDocsComComplementoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsIndice10">
+      <soap12:operation soapAction="http://tempuri.org/GravarFolderCloudDocsIndice10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarFolderCloudDocsIndice10AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsComTabelaTemporalidade">
+      <soap12:operation soapAction="http://tempuri.org/GravarFolderCloudDocsComTabelaTemporalidade" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarFolderCloudDocsComTabelaTemporalidadeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoDocumento">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarTipoDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarTipoDocumentoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderCloudDocsSemDocs">
+      <soap12:operation soapAction="http://tempuri.org/GravarFolderCloudDocsSemDocs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarFolderCloudDocsSemDocsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarDocumentosDigitalizadosBotaoDireito">
+      <soap12:operation soapAction="http://tempuri.org/GravarDocumentosDigitalizadosBotaoDireito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarDocumentosDigitalizadosBotaoDireitoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderParaIndexacao">
+      <soap12:operation soapAction="http://tempuri.org/GravarFolderParaIndexacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarFolderParaIndexacaoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarPasta">
+      <soap12:operation soapAction="http://tempuri.org/CriarPasta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CriarPastaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposFolderesToTable">
+      <soap12:operation soapAction="http://tempuri.org/BuscaTiposFolderesToTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaTiposFolderesToTableAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposFolderesToTablePorUsuario">
+      <soap12:operation soapAction="http://tempuri.org/BuscaTiposFolderesToTablePorUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaTiposFolderesToTablePorUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposFolderesDigitalizacao">
+      <soap12:operation soapAction="http://tempuri.org/BuscaTiposFolderesDigitalizacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaTiposFolderesDigitalizacaoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientesDoClientePorUsuario">
+      <soap12:operation soapAction="http://tempuri.org/BuscaClientesDoClientePorUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaClientesDoClientePorUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientesDoCliente">
+      <soap12:operation soapAction="http://tempuri.org/BuscaClientesDoCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaClientesDoClienteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaEventos">
+      <soap12:operation soapAction="http://tempuri.org/BuscaEventos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaEventosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTiposDocumentos">
+      <soap12:operation soapAction="http://tempuri.org/BuscaTiposDocumentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaTiposDocumentosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarFoldesDocumento">
+      <soap12:operation soapAction="http://tempuri.org/BuscarFoldesDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscarFoldesDocumentoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarFoldesDocumentoByPai">
+      <soap12:operation soapAction="http://tempuri.org/BuscarFoldesDocumentoByPai" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscarFoldesDocumentoByPaiAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientes">
+      <soap12:operation soapAction="http://tempuri.org/BuscaClientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaClientesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClientesCloudDocs">
+      <soap12:operation soapAction="http://tempuri.org/BuscaClientesCloudDocs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaClientesCloudDocsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidarUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuarioAD">
+      <soap12:operation soapAction="http://tempuri.org/ValidarUsuarioAD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidarUsuarioADAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/BuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscarUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuarioExterno">
+      <soap12:operation soapAction="http://tempuri.org/BuscarUsuarioExterno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscarUsuarioExternoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaIntegracaoVirtual">
+      <soap12:operation soapAction="http://tempuri.org/BuscaIntegracaoVirtual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaIntegracaoVirtualAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaConfiguracaoSistema">
+      <soap12:operation soapAction="http://tempuri.org/BuscaConfiguracaoSistema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaConfiguracaoSistemaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaConfiguracaoCliente">
+      <soap12:operation soapAction="http://tempuri.org/BuscaConfiguracaoCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaConfiguracaoClienteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdicionarClassificacao">
+      <soap12:operation soapAction="http://tempuri.org/AdicionarClassificacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AdicionarClassificacaoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizaFolderProcesso">
+      <soap12:operation soapAction="http://tempuri.org/AtualizaFolderProcesso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AtualizaFolderProcessoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaArquivo">
+      <soap12:operation soapAction="http://tempuri.org/VerificaArquivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerificaArquivoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaArquivoFolderProcesso">
+      <soap12:operation soapAction="http://tempuri.org/VerificaArquivoFolderProcesso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerificaArquivoFolderProcessoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderProcesso">
+      <soap12:operation soapAction="http://tempuri.org/GravarFolderProcesso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarFolderProcessoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaLoteComProblemas">
+      <soap12:operation soapAction="http://tempuri.org/BuscaLoteComProblemas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaLoteComProblemasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaFluxoProcesso">
+      <soap12:operation soapAction="http://tempuri.org/BuscaFluxoProcesso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaFluxoProcessoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFolders">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarFoldersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFoldersPorUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarFoldersPorUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarFoldersPorUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDocumentosFolders">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarDocumentosFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarDocumentosFoldersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarObservacoesFolders">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarObservacoesFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarObservacoesFoldersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaChaveTransferencia">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaChaveTransferencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaChaveTransferenciaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaTransferenciaArquivo">
+      <soap12:operation soapAction="http://tempuri.org/VerificaTransferenciaArquivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerificaTransferenciaArquivoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaDigitalizadora">
+      <soap12:operation soapAction="http://tempuri.org/BuscaDigitalizadora" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaDigitalizadoraAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirDigitalizadora">
+      <soap12:operation soapAction="http://tempuri.org/InserirDigitalizadora" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InserirDigitalizadoraAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarArquivoTemporario">
+      <soap12:operation soapAction="http://tempuri.org/EnviarArquivoTemporario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EnviarArquivoTemporarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarArquivoDataCapture">
+      <soap12:operation soapAction="http://tempuri.org/EnviarArquivoDataCapture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EnviarArquivoDataCaptureAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarObjetosClienteUsuario">
+      <soap12:operation soapAction="http://tempuri.org/BuscarObjetosClienteUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscarObjetosClienteUsuarioAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarObjetosClienteUsuarioPerfil">
+      <soap12:operation soapAction="http://tempuri.org/BuscarObjetosClienteUsuarioPerfil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscarObjetosClienteUsuarioPerfilAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaSituacaoDocumento">
+      <soap12:operation soapAction="http://tempuri.org/BuscaSituacaoDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscaSituacaoDocumentoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaAtivacao">
+      <soap12:operation soapAction="http://tempuri.org/VerificaAtivacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerificaAtivacaoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarLoteIndexacao">
+      <soap12:operation soapAction="http://tempuri.org/BuscarLoteIndexacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscarLoteIndexacaoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarFolderProcessoCQ">
+      <soap12:operation soapAction="http://tempuri.org/GravarFolderProcessoCQ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GravarFolderProcessoCQAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizaSituacaoFolderProcesso">
+      <soap12:operation soapAction="http://tempuri.org/AtualizaSituacaoFolderProcesso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AtualizaSituacaoFolderProcessoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaFoldersProcessoFiltroCQ">
+      <soap12:operation soapAction="http://tempuri.org/ListaFoldersProcessoFiltroCQ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListaFoldersProcessoFiltroCQAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarArquivos">
+      <soap12:operation soapAction="http://tempuri.org/EnviarArquivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EnviarArquivosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaServidorExterno">
+      <soap12:operation soapAction="http://tempuri.org/VerificaServidorExterno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerificaServidorExternoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMeusDocumetos">
+      <soap12:operation soapAction="http://tempuri.org/BuscarMeusDocumetos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuscarMeusDocumetosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarAlerta">
+      <soap12:operation soapAction="http://tempuri.org/CadastrarAlerta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CadastrarAlertaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPermissoes">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaPermissoes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaPermissoesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAssinaturas">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarAssinaturas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarAssinaturasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSolicitacaoDocumentoAberta">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarSolicitacaoDocumentoAberta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarSolicitacaoDocumentoAbertaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplasAssinaturas">
+      <soap12:operation soapAction="http://tempuri.org/MultiplasAssinaturas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MultiplasAssinaturasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAreasAssinaturas">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarAreasAssinaturas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarAreasAssinaturasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDocumento">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarDocumentoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarNovaVersaoAssinatura">
+      <soap12:operation soapAction="http://tempuri.org/CriarNovaVersaoAssinatura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CriarNovaVersaoAssinaturaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCliente">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarClienteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarListaGenerica">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarListaGenerica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarListaGenericaAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTabelaTemporaridade">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarTabelaTemporaridade" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarTabelaTemporaridadeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSDocs2">
+    <wsdl:port name="WSDocs2Soap" binding="tns:WSDocs2Soap">
+      <soap:address location="http://hom_corporativo.clouddocs.com.br/WsDocs2.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSDocs2Soap12" binding="tns:WSDocs2Soap12">
+      <soap12:address location="http://hom_corporativo.clouddocs.com.br/WsDocs2.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
